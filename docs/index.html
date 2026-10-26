@@ -28,7 +28,18 @@ th,td{border:1px solid var(--line);padding:6px 9px;vertical-align:top;text-align
 th{background:var(--th)}
 pre{background:var(--code);padding:10px 14px;border-radius:6px;overflow-x:auto;font-size:13px;line-height:1.5}
 a{color:var(--accent-ink)}
-@media (max-width:860px){nav{display:none}main{padding:8px 16px 60px}header{padding:10px 16px}}
+@media (max-width:860px){nav{display:none}main{padding:8px 16px 60px}header{padding:10px 16px;position:static}
+ header h1{font-size:18px}
+ table,thead,tbody,tr,td{display:block;width:100%}
+ table{border:none;overflow:visible}
+ thead{display:none}
+ tr{border:1px solid var(--line);border-radius:8px;margin:0 0 12px;overflow:hidden}
+ td{border:none;border-top:1px solid var(--line);padding:8px 12px}
+ td:first-child{border-top:none;background:var(--th);font-weight:bold}
+ td:not(:first-child)::before{content:attr(data-label);display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:2px}
+ td[data-label=""]::before{display:none}
+ main h1,main h2,main h3{scroll-margin-top:12px}
+}
 </style></head>
 <body>
 <header><h1>NocturneClip 説明書</h1><span class="ver">Version 1.0　2026-10-27</span><a class="pdf" href="NocturneClip_manual.pdf">PDF</a></header>
@@ -109,26 +120,10 @@ a{color:var(--accent-ink)}
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>ボケの元になる画像</td>
-<td>アバターに持たせた専用カメラで、ワールドを描き直した画像</td>
-<td>純正カメラが描画した 1 枚の画像と、その奥行きの情報</td>
-</tr>
-<tr>
-<td>負荷</td>
-<td>ワールドを描き直す分だけ増えます</td>
-<td>描き直しを行わないため、比較的軽量です</td>
-</tr>
-<tr>
-<td>操作</td>
-<td>ギミック独自のカメラを操作します</td>
-<td>純正カメラを使用します（ピントは本品が決めます）</td>
-</tr>
-<tr>
-<td>手前のボケの正確さ</td>
-<td>方式によっては、手前の物の背後に隠れた景色も描けます</td>
-<td>1 枚の画像に写っていない背後の景色は、推定で補います</td>
-</tr>
+<tr><td data-label="">ボケの元になる画像</td><td data-label="専用カメラを追加する方式">アバターに持たせた専用カメラで、ワールドを描き直した画像</td><td data-label="本品（フィルター方式）">純正カメラが描画した 1 枚の画像と、その奥行きの情報</td></tr>
+<tr><td data-label="">負荷</td><td data-label="専用カメラを追加する方式">ワールドを描き直す分だけ増えます</td><td data-label="本品（フィルター方式）">描き直しを行わないため、比較的軽量です</td></tr>
+<tr><td data-label="">操作</td><td data-label="専用カメラを追加する方式">ギミック独自のカメラを操作します</td><td data-label="本品（フィルター方式）">純正カメラを使用します（ピントは本品が決めます）</td></tr>
+<tr><td data-label="">手前のボケの正確さ</td><td data-label="専用カメラを追加する方式">方式によっては、手前の物の背後に隠れた景色も描けます</td><td data-label="本品（フィルター方式）">1 枚の画像に写っていない背後の景色は、推定で補います</td></tr>
 </tbody>
 </table>
 <p>本品は、軽さと純正カメラの手軽さを優先し、手前のボケの正確さにおいて一部を譲っています。この方式に由来する弱点は「制限事項」に記載しています。</p>
@@ -142,30 +137,12 @@ a{color:var(--accent-ink)}
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>構図・ズーム・露出・シャッター・飛行モード・写真の解像度</td>
-<td>純正カメラの操作のまま使用できます</td>
-</tr>
-<tr>
-<td>フォーカス（絞りのアイコン）</td>
-<td>「なし」にしてください。「なし」以外では、純正のボケと本品のボケが二重にかかります</td>
-</tr>
-<tr>
-<td>ピント操作（画面上でのピント位置の指定、ピント距離の調整など）</td>
-<td>効きません。ピントは本品の自動ピントと、左Shift＋F8 の固定のみで決まります</td>
-</tr>
-<tr>
-<td>「表示」に出るピントの印・ピント距離の値</td>
-<td>本品とは連動しません。本品のピント位置は、プレビュー中央の枠と上段の距離の表示で確認してください</td>
-</tr>
-<tr>
-<td>自分のアバターを写さない設定</td>
-<td>本品も写らなくなります。本品はアバターの一部として描画されるためです</td>
-</tr>
-<tr>
-<td>他のプレイヤーを写さない設定</td>
-<td>本品は通常どおり動作します</td>
-</tr>
+<tr><td data-label="純正カメラの機能">構図・ズーム・露出・シャッター・飛行モード・写真の解像度</td><td data-label="本品使用中">純正カメラの操作のまま使用できます</td></tr>
+<tr><td data-label="純正カメラの機能">フォーカス（絞りのアイコン）</td><td data-label="本品使用中">「なし」にしてください。「なし」以外では、純正のボケと本品のボケが二重にかかります</td></tr>
+<tr><td data-label="純正カメラの機能">ピント操作（画面上でのピント位置の指定、ピント距離の調整など）</td><td data-label="本品使用中">効きません。ピントは本品の自動ピントと、左Shift＋F8 の固定のみで決まります</td></tr>
+<tr><td data-label="純正カメラの機能">「表示」に出るピントの印・ピント距離の値</td><td data-label="本品使用中">本品とは連動しません。本品のピント位置は、プレビュー中央の枠と上段の距離の表示で確認してください</td></tr>
+<tr><td data-label="純正カメラの機能">自分のアバターを写さない設定</td><td data-label="本品使用中">本品も写らなくなります。本品はアバターの一部として描画されるためです</td></tr>
+<tr><td data-label="純正カメラの機能">他のプレイヤーを写さない設定</td><td data-label="本品使用中">本品は通常どおり動作します</td></tr>
 </tbody>
 </table>
 <p>その他の純正カメラの設定との組み合わせは、確認していません。</p>
@@ -207,18 +184,8 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>GeForce RTX 5070 Ti</td>
-<td>約 0.3 ms</td>
-<td>約 0.5 ms</td>
-<td>約 4 ms</td>
-</tr>
-<tr>
-<td>RTX A4000 Laptop（ノート用 RTX 3070 相当）</td>
-<td>約 0.5〜0.8 ms</td>
-<td>約 1 ms</td>
-<td>約 11 ms</td>
-</tr>
+<tr><td data-label="環境">GeForce RTX 5070 Ti</td><td data-label="カメラを閉じた状態">約 0.3 ms</td><td data-label="カメラを開いた状態（ボケが少ない構図）">約 0.5 ms</td><td data-label="カメラを開いた状態（大きくボケる構図）">約 4 ms</td></tr>
+<tr><td data-label="環境">RTX A4000 Laptop（ノート用 RTX 3070 相当）</td><td data-label="カメラを閉じた状態">約 0.5〜0.8 ms</td><td data-label="カメラを開いた状態（ボケが少ない構図）">約 1 ms</td><td data-label="カメラを開いた状態（大きくボケる構図）">約 11 ms</td></tr>
 </tbody>
 </table>
 <p>例として、RTX A4000 Laptop で大きくボケる構図を写している間は、約 200 fps が約 70 fps になりました。負荷は、ワールド、画面の解像度、ボケの量によって変わるため、目安として見てください。
@@ -272,14 +239,8 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>ON</td>
-<td>本品を有効にします。アバターを読み込み直すと、OFF に戻ります</td>
-</tr>
-<tr>
-<td>Standard／Soft／Bubble</td>
-<td>写りを選択します。初期値は Standard です。選択した写りは、アバターを読み込み直しても保持されます</td>
-</tr>
+<tr><td data-label="項目">ON</td><td data-label="内容">本品を有効にします。アバターを読み込み直すと、OFF に戻ります</td></tr>
+<tr><td data-label="項目">Standard／Soft／Bubble</td><td data-label="内容">写りを選択します。初期値は Standard です。選択した写りは、アバターを読み込み直しても保持されます</td></tr>
 </tbody>
 </table>
 <h2 id="_15">キー操作（左手のジェスチャー）</h2>
@@ -291,38 +252,14 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>左Shift＋F1</td>
-<td>F値 1（初期値 F1.4）</td>
-</tr>
-<tr>
-<td>左Shift＋F2</td>
-<td>F値 2（初期値 F2）</td>
-</tr>
-<tr>
-<td>左Shift＋F3</td>
-<td>F値 3（初期値 F2.8）</td>
-</tr>
-<tr>
-<td>左Shift＋F4</td>
-<td>F値 4（初期値 F4）</td>
-</tr>
-<tr>
-<td>左Shift＋F5</td>
-<td>F値 5（初期値 F5.6）</td>
-</tr>
-<tr>
-<td>左Shift＋F6</td>
-<td>F値 6（初期値 F8）</td>
-</tr>
-<tr>
-<td>左Shift＋F7</td>
-<td>ピント固定の解除</td>
-</tr>
-<tr>
-<td>左Shift＋F8</td>
-<td>ピント固定</td>
-</tr>
+<tr><td data-label="キー">左Shift＋F1</td><td data-label="内容">F値 1（初期値 F1.4）</td></tr>
+<tr><td data-label="キー">左Shift＋F2</td><td data-label="内容">F値 2（初期値 F2）</td></tr>
+<tr><td data-label="キー">左Shift＋F3</td><td data-label="内容">F値 3（初期値 F2.8）</td></tr>
+<tr><td data-label="キー">左Shift＋F4</td><td data-label="内容">F値 4（初期値 F4）</td></tr>
+<tr><td data-label="キー">左Shift＋F5</td><td data-label="内容">F値 5（初期値 F5.6）</td></tr>
+<tr><td data-label="キー">左Shift＋F6</td><td data-label="内容">F値 6（初期値 F8）</td></tr>
+<tr><td data-label="キー">左Shift＋F7</td><td data-label="内容">ピント固定の解除</td></tr>
+<tr><td data-label="キー">左Shift＋F8</td><td data-label="内容">ピント固定</td></tr>
 </tbody>
 </table>
 <ul>
@@ -360,18 +297,9 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>Standard</td>
-<td>なめらかで自然なボケ（初期値）</td>
-</tr>
-<tr>
-<td>Soft</td>
-<td>周辺減光が軽く、全体にやわらかい描写</td>
-</tr>
-<tr>
-<td>Bubble</td>
-<td>光の玉の縁が明るい、泡のようなボケ</td>
-</tr>
+<tr><td data-label="写り">Standard</td><td data-label="特徴">なめらかで自然なボケ（初期値）</td></tr>
+<tr><td data-label="写り">Soft</td><td data-label="特徴">周辺減光が軽く、全体にやわらかい描写</td></tr>
+<tr><td data-label="写り">Bubble</td><td data-label="特徴">光の玉の縁が明るい、泡のようなボケ</td></tr>
 </tbody>
 </table>
 <h2 id="_20">画面表示</h2>
@@ -395,30 +323,12 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>アバター</td>
-<td>導入先のアバター（シーンに配置したもの）</td>
-</tr>
-<tr>
-<td>F値</td>
-<td>左Shift＋F1〜F6 に割り当てる F値。見出し横で写りを選択すると、写りごとに異なる値を設定できます（初期値 F1.4／2／2.8／4／5.6／8）</td>
-</tr>
-<tr>
-<td>このアバターに入れる</td>
-<td>現在の設定でアバターに導入します。設定はアバターごとに保存され、次回そのアバターを指定したときに読み込まれます</td>
-</tr>
-<tr>
-<td>詳しい設定 &gt; ボケの最大の大きさ</td>
-<td>ボケの大きさの上限（画面の大きさに対する割合）。小さくすると、大きくボケる場面で負荷が下がる可能性があります（効果は場面により異なります）</td>
-</tr>
-<tr>
-<td>詳しい設定 &gt; mm数基準</td>
-<td>画面に表示する焦点距離（mm）の換算基準。フルサイズ 16:9／フルサイズ 3:2。表示の数字のみが変わり、ボケの大きさは変わりません</td>
-</tr>
-<tr>
-<td>詳しい設定 &gt; 初期値に戻す</td>
-<td>上記の値をすべて初期値に戻します</td>
-</tr>
+<tr><td data-label="項目">アバター</td><td data-label="内容">導入先のアバター（シーンに配置したもの）</td></tr>
+<tr><td data-label="項目">F値</td><td data-label="内容">左Shift＋F1〜F6 に割り当てる F値。見出し横で写りを選択すると、写りごとに異なる値を設定できます（初期値 F1.4／2／2.8／4／5.6／8）</td></tr>
+<tr><td data-label="項目">このアバターに入れる</td><td data-label="内容">現在の設定でアバターに導入します。設定はアバターごとに保存され、次回そのアバターを指定したときに読み込まれます</td></tr>
+<tr><td data-label="項目">詳しい設定 &gt; ボケの最大の大きさ</td><td data-label="内容">ボケの大きさの上限（画面の大きさに対する割合）。小さくすると、大きくボケる場面で負荷が下がる可能性があります（効果は場面により異なります）</td></tr>
+<tr><td data-label="項目">詳しい設定 &gt; mm数基準</td><td data-label="内容">画面に表示する焦点距離（mm）の換算基準。フルサイズ 16:9／フルサイズ 3:2。表示の数字のみが変わり、ボケの大きさは変わりません</td></tr>
+<tr><td data-label="項目">詳しい設定 &gt; 初期値に戻す</td><td data-label="内容">上記の値をすべて初期値に戻します</td></tr>
 </tbody>
 </table>
 <h1 id="_22">他のプレイヤーへの影響</h1>
@@ -464,66 +374,21 @@ VR での動作は確認していません。デスクトップモードでの�
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>「Modular Avatar が入っていません」と表示される</td>
-<td>VCC または ALCOM で Modular Avatar を導入してください</td>
-</tr>
-<tr>
-<td>「Modular Avatar が古い版のため、NocturneClip のセットアップを使えません」と表示される</td>
-<td>Modular Avatar を 1.18.1 以上に更新してください</td>
-</tr>
-<tr>
-<td>「書き出し先が Android（iOS）になっています」と表示される</td>
-<td>書き出し先を Windows に切り替えてアップロードしてください</td>
-</tr>
-<tr>
-<td>「シーンが保存されていないため、入れられませんでした」と表示される</td>
-<td>シーンを保存し、再度実行してください</td>
-</tr>
-<tr>
-<td>インポート後にエラーが表示される</td>
-<td>「更新ガイド」に従って入れ直してください</td>
-</tr>
-<tr>
-<td>更新後、一部のアバターで動かない</td>
-<td>本品を導入したすべてのアバターで「このアバターに入れる」を押し、アップロードし直してください</td>
-</tr>
-<tr>
-<td>ボケない</td>
-<td>メニューで「ON」になっているか確認してください。アバターを読み込み直すと OFF に戻ります</td>
-</tr>
-<tr>
-<td>ボケが二重にかかる</td>
-<td>純正カメラのフォーカス（絞りのアイコン）を「なし」にしてください</td>
-</tr>
-<tr>
-<td>本品が写らない</td>
-<td>純正カメラで自分のアバターを写さない設定になっていないかを確認してください</td>
-</tr>
-<tr>
-<td>写真に F値などの表示が写った</td>
-<td>写真の解像度を 1080p 以上にしてください</td>
-</tr>
-<tr>
-<td>画面表示の色がおかしい、文字がぶれる</td>
-<td>ワールドの後処理による場合があります。別のワールドで正常に表示されるか確認してください</td>
-</tr>
-<tr>
-<td>純正カメラでピントを操作しても変わらない</td>
-<td>仕様です。ピントは本品の自動ピントと、左Shift＋F8 の固定で決まります</td>
-</tr>
-<tr>
-<td>左Shift＋F8 を押しても固定されない</td>
-<td>すでに固定中です。左Shift＋F7 で解除してから、再度左Shift＋F8 を押してください</td>
-</tr>
-<tr>
-<td>ピント固定中に、ピントが背景や別の物に移った</td>
-<td>固定は記録した向きの線上の物に合わせます。被写体が動いた場合は、固定し直してください</td>
-</tr>
-<tr>
-<td>F値を変えると表情が変わる</td>
-<td>仕様です。左手の形に連動する表情があるアバターでは変わります</td>
-</tr>
+<tr><td data-label="現象">「Modular Avatar が入っていません」と表示される</td><td data-label="対処">VCC または ALCOM で Modular Avatar を導入してください</td></tr>
+<tr><td data-label="現象">「Modular Avatar が古い版のため、NocturneClip のセットアップを使えません」と表示される</td><td data-label="対処">Modular Avatar を 1.18.1 以上に更新してください</td></tr>
+<tr><td data-label="現象">「書き出し先が Android（iOS）になっています」と表示される</td><td data-label="対処">書き出し先を Windows に切り替えてアップロードしてください</td></tr>
+<tr><td data-label="現象">「シーンが保存されていないため、入れられませんでした」と表示される</td><td data-label="対処">シーンを保存し、再度実行してください</td></tr>
+<tr><td data-label="現象">インポート後にエラーが表示される</td><td data-label="対処">「更新ガイド」に従って入れ直してください</td></tr>
+<tr><td data-label="現象">更新後、一部のアバターで動かない</td><td data-label="対処">本品を導入したすべてのアバターで「このアバターに入れる」を押し、アップロードし直してください</td></tr>
+<tr><td data-label="現象">ボケない</td><td data-label="対処">メニューで「ON」になっているか確認してください。アバターを読み込み直すと OFF に戻ります</td></tr>
+<tr><td data-label="現象">ボケが二重にかかる</td><td data-label="対処">純正カメラのフォーカス（絞りのアイコン）を「なし」にしてください</td></tr>
+<tr><td data-label="現象">本品が写らない</td><td data-label="対処">純正カメラで自分のアバターを写さない設定になっていないかを確認してください</td></tr>
+<tr><td data-label="現象">写真に F値などの表示が写った</td><td data-label="対処">写真の解像度を 1080p 以上にしてください</td></tr>
+<tr><td data-label="現象">画面表示の色がおかしい、文字がぶれる</td><td data-label="対処">ワールドの後処理による場合があります。別のワールドで正常に表示されるか確認してください</td></tr>
+<tr><td data-label="現象">純正カメラでピントを操作しても変わらない</td><td data-label="対処">仕様です。ピントは本品の自動ピントと、左Shift＋F8 の固定で決まります</td></tr>
+<tr><td data-label="現象">左Shift＋F8 を押しても固定されない</td><td data-label="対処">すでに固定中です。左Shift＋F7 で解除してから、再度左Shift＋F8 を押してください</td></tr>
+<tr><td data-label="現象">ピント固定中に、ピントが背景や別の物に移った</td><td data-label="対処">固定は記録した向きの線上の物に合わせます。被写体が動いた場合は、固定し直してください</td></tr>
+<tr><td data-label="現象">F値を変えると表情が変わる</td><td data-label="対処">仕様です。左手の形に連動する表情があるアバターでは変わります</td></tr>
 </tbody>
 </table>
 <h1 id="_26">更新履歴</h1>
