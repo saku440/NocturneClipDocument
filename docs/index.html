@@ -30,14 +30,11 @@ pre{background:var(--code);padding:10px 14px;border-radius:6px;overflow-x:auto;f
 a{color:var(--accent-ink)}
 @media (max-width:860px){nav{display:none}main{padding:8px 16px 60px}header{padding:10px 16px;position:static}
  header h1{font-size:18px}
- table,thead,tbody,tr,td{display:block;width:100%}
- table{border:none;overflow:visible}
- thead{display:none}
- tr{border:1px solid var(--line);border-radius:8px;margin:0 0 12px;overflow:hidden}
- td{border:none;border-top:1px solid var(--line);padding:8px 12px}
- td:first-child{border-top:none;background:var(--th);font-weight:bold}
- td:not(:first-child)::before{content:attr(data-label);display:block;font-size:12px;color:var(--muted);line-height:1.5;margin-bottom:2px}
- td[data-label=""]::before{display:none}
+ table{font-size:13.5px;-webkit-overflow-scrolling:touch}
+ th,td{min-width:8.5em;padding:6px 8px}
+ th:first-child,td:first-child{position:sticky;left:0;background:var(--th);min-width:6.5em;max-width:8em;box-shadow:1px 0 0 var(--line)}
+ td:first-child{background:var(--bg)}
+ .scrollhint{display:block;font-size:12px;color:var(--muted);margin:-8px 0 14px}
  main h1,main h2,main h3{scroll-margin-top:12px}
 }
 </style></head>
