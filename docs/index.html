@@ -60,16 +60,12 @@ blockquote p{margin:4px 0}
 }
 </style></head>
 <body>
-<header><h1>NocturneClip 説明書</h1><span class="ver">Version 1.0　2026-10-27</span><a class="pdf" href="NocturneClip_manual.pdf">PDF</a></header>
+<header><h1>NocturneClip 説明書</h1><span class="ver">Version 1.0　2026-10-28</span><a class="pdf" href="NocturneClip_manual.pdf">PDF</a></header>
 <div class="wrap" id="top"><nav><div class="toc">
 <ul>
 <li><a href="#intro">はじめに</a><ul>
-<li><a href="#about">本品について</a></li>
-<li><a href="#features">主な特徴</a></li>
+<li><a href="#about">NocturneClip について</a></li>
 <li><a href="#requirements">動作環境</a></li>
-</ul>
-</li>
-<li><a href="#quickstart">クイックスタート</a><ul>
 <li><a href="#setup">セットアップガイド</a></li>
 <li><a href="#shooting">撮影ガイド</a></li>
 </ul>
@@ -78,11 +74,14 @@ blockquote p{margin:4px 0}
 <li><a href="#stock-camera">純正カメラとの違い</a></li>
 <li><a href="#menu">メニュー</a></li>
 <li><a href="#keys">キー操作（左手のジェスチャー）</a></li>
-<li><a href="#fnumber">F値とボケの大きさ</a></li>
-<li><a href="#focus">ピント</a></li>
+</ul>
+</li>
+<li><a href="#focus">ピント</a><ul>
+<li><a href="#auto-focus">自動</a></li>
+<li><a href="#focus-lock">ピント固定</a></li>
 <li><a href="#looks">写り</a></li>
 <li><a href="#display">画面表示</a></li>
-<li><a href="#spout">付記：Spout 出力</a></li>
+<li><a href="#spout">おまけ：Spout 出力</a></li>
 </ul>
 </li>
 <li><a href="#settings">設定リファレンス</a></li>
@@ -90,7 +89,6 @@ blockquote p{margin:4px 0}
 <li><a href="#limits">制限事項</a></li>
 <li><a href="#results">動作確認の結果</a><ul>
 <li><a href="#tested">撮影できることを確認した環境</a></li>
-<li><a href="#load">負荷</a></li>
 </ul>
 </li>
 <li><a href="#faq">よくある質問</a></li>
@@ -100,18 +98,6 @@ blockquote p{margin:4px 0}
 </ul>
 </li>
 <li><a href="#troubleshooting">トラブルシューティング</a></li>
-<li><a href="#appendix">付録：仕組み</a><ul>
-<li><a href="#method">方式と、カメラを追加する方式との違い</a></li>
-<li><a href="#h-4a3f28">処理の流れ</a></li>
-<li><a href="#h-117d97">奥行きの情報の使い道</a></li>
-<li><a href="#h-6df139">ボケの大きさの計算</a></li>
-<li><a href="#h-806b47">ピントの仕組み</a></li>
-<li><a href="#h-57361e">ボケ生成の 5 段階</a></li>
-<li><a href="#h-a727d1">写りの違い</a></li>
-<li><a href="#h-45a923">画面表示の仕組み</a></li>
-<li><a href="#h-038759">他のプレイヤーに影響しない仕組み</a></li>
-</ul>
-</li>
 <li><a href="#terms-credits">利用規約・権利表記・連絡先</a><ul>
 <li><a href="#terms">利用規約</a></li>
 <li><a href="#credits">権利表記</a></li>
@@ -122,15 +108,11 @@ blockquote p{margin:4px 0}
 <li><a href="#history">更新履歴</a></li>
 </ul>
 </div>
-</nav><main><p class="mver">Version 1.0　2026-10-27</p><details class="mtoc"><summary>目次</summary><div class="toc">
+</nav><main><p class="mver">Version 1.0　2026-10-28</p><details class="mtoc"><summary>目次</summary><div class="toc">
 <ul>
 <li><a href="#intro">はじめに</a><ul>
-<li><a href="#about">本品について</a></li>
-<li><a href="#features">主な特徴</a></li>
+<li><a href="#about">NocturneClip について</a></li>
 <li><a href="#requirements">動作環境</a></li>
-</ul>
-</li>
-<li><a href="#quickstart">クイックスタート</a><ul>
 <li><a href="#setup">セットアップガイド</a></li>
 <li><a href="#shooting">撮影ガイド</a></li>
 </ul>
@@ -139,11 +121,14 @@ blockquote p{margin:4px 0}
 <li><a href="#stock-camera">純正カメラとの違い</a></li>
 <li><a href="#menu">メニュー</a></li>
 <li><a href="#keys">キー操作（左手のジェスチャー）</a></li>
-<li><a href="#fnumber">F値とボケの大きさ</a></li>
-<li><a href="#focus">ピント</a></li>
+</ul>
+</li>
+<li><a href="#focus">ピント</a><ul>
+<li><a href="#auto-focus">自動</a></li>
+<li><a href="#focus-lock">ピント固定</a></li>
 <li><a href="#looks">写り</a></li>
 <li><a href="#display">画面表示</a></li>
-<li><a href="#spout">付記：Spout 出力</a></li>
+<li><a href="#spout">おまけ：Spout 出力</a></li>
 </ul>
 </li>
 <li><a href="#settings">設定リファレンス</a></li>
@@ -151,7 +136,6 @@ blockquote p{margin:4px 0}
 <li><a href="#limits">制限事項</a></li>
 <li><a href="#results">動作確認の結果</a><ul>
 <li><a href="#tested">撮影できることを確認した環境</a></li>
-<li><a href="#load">負荷</a></li>
 </ul>
 </li>
 <li><a href="#faq">よくある質問</a></li>
@@ -161,18 +145,6 @@ blockquote p{margin:4px 0}
 </ul>
 </li>
 <li><a href="#troubleshooting">トラブルシューティング</a></li>
-<li><a href="#appendix">付録：仕組み</a><ul>
-<li><a href="#method">方式と、カメラを追加する方式との違い</a></li>
-<li><a href="#h-4a3f28">処理の流れ</a></li>
-<li><a href="#h-117d97">奥行きの情報の使い道</a></li>
-<li><a href="#h-6df139">ボケの大きさの計算</a></li>
-<li><a href="#h-806b47">ピントの仕組み</a></li>
-<li><a href="#h-57361e">ボケ生成の 5 段階</a></li>
-<li><a href="#h-a727d1">写りの違い</a></li>
-<li><a href="#h-45a923">画面表示の仕組み</a></li>
-<li><a href="#h-038759">他のプレイヤーに影響しない仕組み</a></li>
-</ul>
-</li>
 <li><a href="#terms-credits">利用規約・権利表記・連絡先</a><ul>
 <li><a href="#terms">利用規約</a></li>
 <li><a href="#credits">権利表記</a></li>
@@ -184,56 +156,42 @@ blockquote p{margin:4px 0}
 </ul>
 </div>
 </details><h1 id="intro">はじめに</h1>
-<p>初めて使う方は、「<a href="#setup">セットアップガイド</a>」、「<a href="#shooting">撮影ガイド</a>」の順に読んでください。</p>
-<h2 id="about">本品について</h2>
-<p>NocturneClip（以下「本品」）は、VRChat の純正カメラで撮影する写真に、奥行きの情報を用いてレンズのようなボケを付与する、フィルター型のアバター用ギミックです。
-デスクトップモードにおいて、純正カメラを使って手軽に撮影できることを目的としています。</p>
-<h2 id="features">主な特徴</h2>
-<ul>
-<li><strong>純正カメラで撮影します。</strong> 構図、ズーム、露出、シャッター、飛行モード、写真の解像度（最大 8K）は、純正カメラの操作をそのまま使用します。ピントのみ、本品が決めます（「<a href="#stock-camera">純正カメラとの違い</a>」を参照）。</li>
-<li><strong>ピントは自動です。</strong> 画面中央に自動で合わせます。キー操作でピントを固定し、構図を変えることもできます。</li>
-<li><strong>F値をキーで切り替えられます。</strong> 左Shift＋F1〜F6 に、6 段階の F値を割り当てます。</li>
-<li><strong>写りを選択できます。</strong> Standard／Soft／Bubble の 3 種類です。</li>
-<li><strong>本品の描画は他のプレイヤーに見えません。</strong> 本品は利用者自身の画面でのみ描画します。ただし、操作に用いる左手の形は他のプレイヤーにも見えます（「<a href="#others">他のプレイヤーへの影響</a>」を参照）。</li>
-</ul>
+<p>ダウンロードいただきありがとうございます。
+初めて使う方は、「<a href="#setup">セットアップガイド</a>」と「<a href="#shooting">撮影ガイド</a>」を順に読めば、すぐに撮影を始められます。</p>
+<h2 id="about">NocturneClip について</h2>
+<p>NocturneClip は、VRChat の純正カメラで撮影した写真に、レンズのようなボケ感を上乗せするアバター用ギミックです。
+特にデスクトップモードでの撮影体験をより楽しくすることを目標に制作しました。</p>
 <h2 id="requirements">動作環境</h2>
 <ul>
-<li>PC版 VRChat（Quest 版・スマートフォン版には対応していません）</li>
-<li>デスクトップモード（VR での動作は確認していません）</li>
-<li>VRChat が指定する版の Unity、および VRChat SDK（Avatars）</li>
-<li>Modular Avatar 1.18.1 以上（VCC または ALCOM（VRChat 用のパッケージを管理するアプリ）で導入）</li>
+<li>PC 版 VRChat のデスクトップモード</li>
+<li><a href="https://creators.vrchat.com/sdk/upgrade/current-unity-version/">Unity 2022.3.22f1</a></li>
+<li><a href="https://creators.vrchat.com/sdk/">VRChat SDK（Avatars）</a> 3.10.4</li>
+<li><a href="https://modular-avatar.nadena.dev/ja/docs/intro">Modular Avatar</a> 1.18.1 以上</li>
 </ul>
-<p>本品が追加するパラメータ（ON/OFF、写りの選択）は、いずれも同期（ほかのプレイヤーに値を送ること）しない設定です。同期用のパラメータの容量は使用しません。</p>
-<p><strong>動作確認に使用した Version</strong></p>
-<ul>
-<li>Unity 2022.3.22f1</li>
-<li>VRChat SDK（Avatars）3.10.4</li>
-<li>Modular Avatar 1.18.1</li>
-</ul>
-<h1 id="quickstart">クイックスタート</h1>
+<p>VRChat SDK と Modular Avatar は、<a href="https://vcc.docs.vrchat.com/">VCC</a> または <a href="https://vrc-get.anatawa12.com/alcom">ALCOM</a> でプロジェクトに追加してください。</p>
 <h2 id="setup">セットアップガイド</h2>
 <ol>
-<li>Modular Avatar を導入したプロジェクトに、本品のパッケージをインポートします。</li>
-<li>Unity の上部のメニューの「NocturneClip &gt; セットアップ」を開きます。</li>
-<li>「アバター」欄に、シーンに配置したアバターを指定します。</li>
-<li>必要に応じて F値を変更します（「<a href="#settings">設定リファレンス</a>」を参照）。</li>
-<li>「このアバターに入れる」を押します。</li>
+<li>Modular Avatar を入れたプロジェクトに、NocturneClip のパッケージをインポートします。</li>
+<li>Unity の上部のメニューから「NocturneClip &gt; セットアップ」を開きます。</li>
+<li>「アバター」の欄に、シーンに置いたアバターを入れます。</li>
+<li>F値を変えたいときは、ここで変えます（「<a href="#settings">設定リファレンス</a>」を参照）。</li>
+<li>「このアバターに入れる」を押すと、「NocturneClip」というオブジェクトがアバターに追加されます。</li>
 <li>アバターをアップロードします。</li>
 </ol>
-<p>導入後、アバターの中に「NocturneClip」オブジェクトが追加されます。</p>
 <h2 id="shooting">撮影ガイド</h2>
 <ol>
-<li>エクスプレッションメニューの「NocturneClip」から「ON」を選択します。デスクトップモードでは、純正カメラを開いている間はエクスプレッションメニューを操作できないため、カメラを開く前に ON にしてください。</li>
-<li>純正カメラを開き、フォーカス（絞りのアイコン）を「なし」に設定します。</li>
-<li>撮りたい物を画面中央に置きます。ピントが自動で合います。</li>
-<li>左Shift＋F1〜F6 で F値を選びます。F値が小さいほど大きくボケます。</li>
-<li>純正カメラで撮影します。写真の解像度は 1080p 以上を選んでください（720p では、F値などの表示が写真に写ります）。</li>
+<li>エクスプレッションメニューの「NocturneClip」から「ON」を押します。</li>
+<li>純正カメラを開き、フォーカス（絞りのアイコン）を「なし」にします。</li>
+<li>撮りたい物を画面中央の枠に合わせると、自動でピントが合います。
+    画面の端にある物にピントを合わせたいときは、まずその物を画面中央の枠に置いて、左Shift＋F8 でピントを固定します。そのあとで構図を整えてください。</li>
+<li>左Shift＋F1〜F6 で F値を選びます。</li>
+<li>純正カメラで撮影します。</li>
 </ol>
-<p>画面の端にある物にピントを合わせたい場合は、その物を一度画面中央に置いて左Shift＋F8 を押し、ピントを固定してから構図を変えてください。</p>
-<p>撮影を終えたら、エクスプレッションメニューの「ON」をもう一度押して、本品を止めてください。カメラを開いている間は、プレビュー中も含めて処理を続けるためです。</p>
+<p><strong>撮影上の注意</strong></p>
+<p>写真の解像度は 1080p 以上にしてください。720p にすると、F値などの表示が写真に写ってしまいます。</p>
 <h1 id="functions">機能</h1>
 <h2 id="stock-camera">純正カメラとの違い</h2>
-<p>本品を使用している間は、純正カメラを次のように扱ってください。</p>
+<p>NocturneClip を使っている間は、純正カメラを次のように扱ってください。</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -242,17 +200,17 @@ blockquote p{margin:4px 0}
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="純正カメラの機能">構図・ズーム・露出・シャッター・飛行モード・写真の解像度</td><td data-label="扱い方">純正カメラの操作のまま使用できます</td></tr>
-<tr><td data-label="純正カメラの機能">フォーカス（絞りのアイコン）</td><td data-label="扱い方">「なし」にしてください。「なし」以外では、純正のボケと本品のボケが二重にかかります</td></tr>
-<tr><td data-label="純正カメラの機能">ピント操作（画面上でのピント位置の指定、ピント距離の調整など）</td><td data-label="扱い方">効きません。ピントは本品の自動ピントと、左Shift＋F8 の固定のみで決まります</td></tr>
-<tr><td data-label="純正カメラの機能">「表示」に出るピントの印・ピント距離の値</td><td data-label="扱い方">本品とは連動しません。本品のピント位置は、プレビュー中央の枠と上段の距離の表示で確認してください</td></tr>
-<tr><td data-label="純正カメラの機能">自分のアバターを写さない設定</td><td data-label="扱い方">本品も写らなくなります。本品はアバターの一部として描画されるためです</td></tr>
-<tr><td data-label="純正カメラの機能">他のプレイヤーを写さない設定</td><td data-label="扱い方">本品は通常どおり動作します</td></tr>
+<tr><td data-label="純正カメラの機能">構図・ズーム・露出・シャッター・飛行モード・写真の解像度</td><td data-label="扱い方">いつもどおり純正カメラで操作できます</td></tr>
+<tr><td data-label="純正カメラの機能">フォーカス（絞りのアイコン）</td><td data-label="扱い方">「なし」を推奨します。それ以外を選ぶと、純正のボケと NocturneClip のボケが二重にかかります</td></tr>
+<tr><td data-label="純正カメラの機能">ピント操作（画面上でのピント位置の指定、ピント距離の調整など）</td><td data-label="扱い方">NocturneClip のピントには使われません。NocturneClip のピントは、自動ピントと左Shift＋F8 の固定で決まります</td></tr>
+<tr><td data-label="純正カメラの機能">「レンズの表示」に出るピントの印やピント距離の値</td><td data-label="扱い方">NocturneClip とは連動しません。NocturneClip のピントの位置は、プレビューの真ん中の枠と、上の段の距離の表示で確かめてください</td></tr>
+<tr><td data-label="純正カメラの機能">自分のアバターを写さない設定</td><td data-label="扱い方">NocturneClip も写らなくなります。NocturneClip はアバターの一部として描かれているためです</td></tr>
+<tr><td data-label="純正カメラの機能">ほかのプレイヤーを写さない設定</td><td data-label="扱い方">NocturneClip と併用できます</td></tr>
+<tr><td data-label="純正カメラの機能">純正カメラエフェクト</td><td data-label="扱い方">NocturneClip と併用できます</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
-<p>その他の純正カメラの設定との組み合わせは、確認していません。</p>
 <h2 id="menu">メニュー</h2>
-<p>エクスプレッションメニューの「NocturneClip」に、次の項目があります。</p>
+<p>エクスプレッションメニューの「NocturneClip」には、次の項目があります。</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -261,12 +219,12 @@ blockquote p{margin:4px 0}
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="項目">ON</td><td data-label="内容">本品を有効にします。アバターを読み込み直すと、OFF に戻ります</td></tr>
-<tr><td data-label="項目">Standard／Soft／Bubble</td><td data-label="内容">写りを選択します。初期値は Standard です。選択した写りは、アバターを読み込み直しても保持されます</td></tr>
+<tr><td data-label="項目">ON</td><td data-label="内容">NocturneClip が有効になります</td></tr>
+<tr><td data-label="項目">Standard／Soft／Bubble</td><td data-label="内容">写りを選びます。最初は Standard です。選んだ写りは、アバターを読み込み直しても残ります</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
 <h2 id="keys">キー操作（左手のジェスチャー）</h2>
-<p>デスクトップモードでは、左Shift＋F1〜F8 は VRChat で左手の形を変えるキーです。本品は、この左手の形を合図にして操作を受け取ります。</p>
+<p>デスクトップモードでは、左Shift＋F1〜F8 は VRChat で左手の形を変えるキーです。NocturneClip は、この左手の形を合図にして動きます。</p>
 <div class="tbl"><table>
 <thead>
 <tr>
@@ -275,42 +233,37 @@ blockquote p{margin:4px 0}
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="キー">左Shift＋F1</td><td data-label="内容">F値 1（初期値 F1.4）</td></tr>
-<tr><td data-label="キー">左Shift＋F2</td><td data-label="内容">F値 2（初期値 F2）</td></tr>
-<tr><td data-label="キー">左Shift＋F3</td><td data-label="内容">F値 3（初期値 F2.8）</td></tr>
-<tr><td data-label="キー">左Shift＋F4</td><td data-label="内容">F値 4（初期値 F4）</td></tr>
-<tr><td data-label="キー">左Shift＋F5</td><td data-label="内容">F値 5（初期値 F5.6）</td></tr>
-<tr><td data-label="キー">左Shift＋F6</td><td data-label="内容">F値 6（初期値 F8）</td></tr>
-<tr><td data-label="キー">左Shift＋F7</td><td data-label="内容">ピント固定の解除</td></tr>
-<tr><td data-label="キー">左Shift＋F8</td><td data-label="内容">ピント固定</td></tr>
+<tr><td data-label="キー">左Shift＋F1</td><td data-label="内容">F値 1（最初は F1.4）</td></tr>
+<tr><td data-label="キー">左Shift＋F2</td><td data-label="内容">F値 2（最初は F2）</td></tr>
+<tr><td data-label="キー">左Shift＋F3</td><td data-label="内容">F値 3（最初は F2.8）</td></tr>
+<tr><td data-label="キー">左Shift＋F4</td><td data-label="内容">F値 4（最初は F4）</td></tr>
+<tr><td data-label="キー">左Shift＋F5</td><td data-label="内容">F値 5（最初は F5.6）</td></tr>
+<tr><td data-label="キー">左Shift＋F6</td><td data-label="内容">F値 6（最初は F8）</td></tr>
+<tr><td data-label="キー">左Shift＋F7</td><td data-label="内容">ピント固定を外す</td></tr>
+<tr><td data-label="キー">左Shift＋F8</td><td data-label="内容">ピントを固定する</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
 <ul>
-<li>キーの番号と F値の数字は対応していません。各キーの F値は、セットアップ画面で変更できます。</li>
-<li>左手が何もしていない状態は、左Shift＋F1 と同じ扱いです。そのため、最もよく使う F値を F1 に割り当てることを推奨します。</li>
-<li>左Shift＋F7・F8 を押しても、F値は直前に選んだ値のまま変わりません。</li>
-<li>写りごとに異なる F値を設定している場合、写りを切り替えると、同じキーでも F値が変わります。</li>
-<li>右手は表情の操作に残すため、左手を使用しています。左手の形に連動する表情や耳などがあるアバターでは、F値を変えるたびにそれらが変わります。気になる場合は、アバター側の左手の設定を見直してください。</li>
+<li>キーの番号と F値の数字は一致していません。どのキーにどの F値を入れるかは、セットアップ画面で変えられます。</li>
+<li>左手で何もしていないときは、左Shift＋F1 と同じ扱いになります。いちばんよく使う F値を F1 に入れておくのがおすすめです。</li>
+<li>写りごとに別の F値を入れている場合は、写りを切り替えると、同じキーでも F値が変わります。</li>
+<li>ハンドジェスチャーで F値を変えているため、アバターの手、表情、耳などが動きます。自撮りが中心の方は、表情固定ギミックなどと併用してください。</li>
 </ul>
-<h2 id="fnumber">F値とボケの大きさ</h2>
+<h1 id="focus">ピント</h1>
+<h2 id="auto-focus">自動</h2>
+<p>画面の真ん中にある物に、ピントを合わせ続けます。</p>
+<p>※ まつ毛や髪の毛先のような、細い物や小さい物には合いにくいことがあります。</p>
+<h2 id="focus-lock">ピント固定</h2>
+<p>左Shift＋F8 を押すと、そのときの純正カメラの位置と向きを覚えます。そこから覚えた向きに真っすぐ線を伸ばし、その線の上に見えている物にピントを合わせ続けます。
+固定したあとにカメラの向きを変えても、ピントはその線の上の物に残ります。</p>
+<p>固定は、特定の人や物を追いかける機能ではありません。次の点に気をつけてください。</p>
 <ul>
-<li>ボケの大きさは、F値、ピント距離、純正カメラのズームから、実際のレンズと同じ計算で求めます。</li>
-<li>F値が小さいほど、ピント距離から離れるほど、また望遠側ほど、大きくボケます。</li>
-<li>写真の解像度にかかわらず、写真全体に対するボケの大きさは一定です。</li>
+<li>被写体が動いて線から外れると、ピントは線の上にある別の物（背景など）に移ります。動く被写体は、固定し直してください。</li>
+<li>線の手前を別の物が横切ると、ピントはその物に移ります。</li>
+<li>線の上の物が画面に写っていないときは、自動ピントに戻ります。また写れば、固定に戻ります。ただ、カメラを大きく動かしたときなどは、戻らないことがあります。そのときは左Shift＋F7 で固定を外して、もう一度固定してください。</li>
 </ul>
-<h2 id="focus">ピント</h2>
-<h3 id="h-4d4ad0">自動</h3>
-<p>画面中央の物にピントを合わせ続けます。細い物や小さな物（まつ毛、髪の毛先など）には合いにくい場合があります。</p>
-<h3 id="h-1ef8fd">固定</h3>
-<p>左Shift＋F8 を押した時点の、純正カメラの位置と向きを記録します。以後は、記録した位置から記録した向きへ伸ばした線の上に見えている物に、ピントを合わせます。
-固定した後にカメラの向きを変えて構図を変えても、ピントはその線上の物に残ります。</p>
-<p>固定は、特定の被写体を追いかける機能ではありません。次の点にご注意ください。</p>
-<ul>
-<li>被写体が動いて線上から外れると、ピントは線上にある別の物（背景など）に移ります。動く被写体は、固定し直してください。</li>
-<li>線上の手前を別の物が横切ると、ピントはその物に移ります。</li>
-<li>線上の物が画面に写っていない場合は、自動ピントに戻ります。再び写ると、固定に戻ります。ただし、カメラを大きく動かした場合などは、戻らないことがあります。そのときは左Shift＋F7 で解除し、固定し直してください。</li>
-</ul>
-<p>固定は、左Shift＋F7 を押すか、本品を止めるまで続きます。固定する対象を変える場合は、左Shift＋F7 で一度解除してから、再度左Shift＋F8 を押してください。VRChat の仕様上、F8 を続けて押しても 2 回目は反映されません。F値を変えても、固定は解除されません。</p>
+<p>固定は、左Shift＋F7 を押すか、NocturneClip を止めるまで続きます。F値を変えても、固定は外れません。</p>
+<p>固定する物を変えたいときは、左Shift＋F7 で一度外してから、もう一度左Shift＋F8 を押してください。VRChat の仕組み上、F8 を続けて押しても 2 回目は届きません。</p>
 <h2 id="looks">写り</h2>
 <div class="tbl"><table>
 <thead>
@@ -320,22 +273,22 @@ blockquote p{margin:4px 0}
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="写り">Standard</td><td data-label="特徴">なめらかで自然なボケ（初期値）</td></tr>
-<tr><td data-label="写り">Soft</td><td data-label="特徴">周辺減光（画面の四隅が暗くなる描写）が軽く、全体にやわらかい描写</td></tr>
-<tr><td data-label="写り">Bubble</td><td data-label="特徴">光の玉の縁が明るい、泡のようなボケ</td></tr>
+<tr><td data-label="写り">Standard</td><td data-label="特徴">なめらかで自然なボケです（最初はこれです）</td></tr>
+<tr><td data-label="写り">Soft</td><td data-label="特徴">周辺減光（画面の四隅が暗くなること）が控えめで、全体にやわらかい写りです</td></tr>
+<tr><td data-label="写り">Bubble</td><td data-label="特徴">光の玉の縁が明るく、泡のように見えるボケです</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
 <h2 id="display">画面表示</h2>
-<p>純正カメラのプレビューに表示します。</p>
+<p>純正カメラのプレビューに、次のものを表示します。</p>
 <ul>
-<li>上段：F値／ピント距離／焦点距離（mm）</li>
-<li>その下：距離目盛り。ピントの合う範囲を緑で示します。</li>
-<li>中央の枠：白はピントが自動で追従している状態、緑はピント固定中を示します。</li>
+<li>上の段：F値／ピントの距離／焦点距離（mm）</li>
+<li>その下：距離の目盛り。ピントが合う範囲を緑で示します。</li>
+<li>真ん中の枠：白はピントが自動で動いている状態、緑はピントを固定している状態です。</li>
 </ul>
-<p>表示は、描画の大きさが 1280×720 以下のときに描画します。そのため、写真の解像度を 720p にすると、表示が写真にも写ります。1080p 以上では写りません。</p>
-<h2 id="spout">付記：Spout 出力</h2>
-<p>純正カメラの Spout 出力（映像を OBS などの別のアプリに送る仕組み）においても、本品の写りで出力できます。出力の大きさが 1280×720 より大きい場合、画面表示は出力に含まれません。
-ただし本品は写真撮影を前提としており、動画向けには作られていません。ピントがゆるやかに移動するなどの動画向けの挙動は備えておらず、ピントの移動は瞬時に切り替わります。</p>
+<p>表示は、描く大きさが 1280×720 以下のときだけ出ます。そのため、写真の解像度を 720p にすると写真にも写ってしまいます。1080p 以上なら写りません。</p>
+<h2 id="spout">おまけ：Spout 出力</h2>
+<p>純正カメラの Spout 出力（映像を OBS などのアプリに送る仕組み）でも、NocturneClip の写りで出せます。出力の大きさが 1280×720 より大きければ、画面表示は映りません。</p>
+<p>ただ、NocturneClip は写真を撮るためのものなので、動画向けの作りにはなっていません。たとえばピントは、ゆっくり移るのではなく、一瞬で切り替わります。</p>
 <h1 id="settings">設定リファレンス</h1>
 <p>Unity の上部のメニューの「NocturneClip &gt; セットアップ」で開く画面の項目です。</p>
 <div class="tbl"><table>
@@ -346,212 +299,115 @@ blockquote p{margin:4px 0}
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="項目">アバター</td><td data-label="内容">導入先のアバター（シーンに配置したもの）</td></tr>
-<tr><td data-label="項目">F値</td><td data-label="内容">左Shift＋F1〜F6 に割り当てる F値。見出し横で写りを選択すると、写りごとに異なる値を設定できます（初期値 F1.4／2／2.8／4／5.6／8）</td></tr>
-<tr><td data-label="項目">このアバターに入れる</td><td data-label="内容">現在の設定でアバターに導入します。設定はアバターごとに保存され、次回そのアバターを指定したときに読み込まれます</td></tr>
-<tr><td data-label="項目">詳しい設定 &gt; ボケの最大の大きさ</td><td data-label="内容">ボケの大きさの上限（画面の大きさに対する割合）。小さくすると、大きくボケる場面で負荷が下がる可能性があります（効果は場面により異なります）</td></tr>
-<tr><td data-label="項目">詳しい設定 &gt; mm数基準</td><td data-label="内容">画面に表示する焦点距離（mm）の換算基準。フルサイズ 16:9／フルサイズ 3:2。表示の数字のみが変わり、ボケの大きさは変わりません</td></tr>
-<tr><td data-label="項目">詳しい設定 &gt; 初期値に戻す</td><td data-label="内容">上記の値をすべて初期値に戻します</td></tr>
+<tr><td data-label="項目">アバター</td><td data-label="内容">NocturneClip を入れるアバターです（シーンに置いたもの）</td></tr>
+<tr><td data-label="項目">F値</td><td data-label="内容">左Shift＋F1〜F6 に入れる F値です。見出しの横で写りを選ぶと、写りごとに別の値を入れられます（最初は F1.4／2／2.8／4／5.6／8）</td></tr>
+<tr><td data-label="項目">このアバターに入れる</td><td data-label="内容">今の設定でアバターに入れます。設定はアバターごとに保存され、次にそのアバターを選んだときに読み込まれます</td></tr>
+<tr><td data-label="項目">詳しい設定 &gt; ボケの最大の大きさ</td><td data-label="内容">ボケの大きさの上限です（画面の大きさに対する割合）</td></tr>
+<tr><td data-label="項目">詳しい設定 &gt; mm数基準</td><td data-label="内容">画面に出す焦点距離（mm）を、どの基準で計算するかです。フルサイズ 16:9／フルサイズ 3:2 から選びます。変わるのは表示の数字だけで、ボケの大きさは変わりません</td></tr>
+<tr><td data-label="項目">詳しい設定 &gt; 初期値に戻す</td><td data-label="内容">上の値をすべて最初の値に戻します</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
 <h1 id="others">他のプレイヤーへの影響</h1>
 <ul>
-<li>本品の描画は、利用者自身の画面でのみ行います。他のプレイヤーの画面には何も描画されず、他のプレイヤーが撮影する写真にも影響しません。</li>
-<li>パラメータはすべて同期しません。</li>
-<li><strong>左手の形は他のプレイヤーにも見えます。</strong> F値の切り替えやピント固定は VRChat の左手のジェスチャーで行うため、手の形と、それに連動する表情などは、通常どおり他のプレイヤーにも見えます。</li>
+<li>NocturneClip が描くのは、自分の画面だけです。ほかのプレイヤーの画面には何も出ませんし、ほかのプレイヤーが撮る写真にも影響しません。</li>
+<li>パラメータはどれも同期しません。</li>
+<li><strong>左手の形はほかのプレイヤーにも見えます。</strong> F値の切り替えやピントの固定には VRChat の左手のジェスチャーを使うので、手の形や、それに合わせて動く表情などは、いつもどおりほかの人にも見えます。</li>
 </ul>
 <h1 id="limits">制限事項</h1>
 <ul>
-<li><strong>至近距離の物を大きくぼかす写真は不得意です</strong>（目安：レンズのすぐ前にある物を大きくぼかす構図）。<ul>
-<li>起きること：明るい背景に細い物（窓枠等）が重なる箇所で、ボケの縁が浮いて見える、背後の物が途中で途切れる、手前の物の形が透けて見える、といった現象が生じます。</li>
-<li>理由：手前の物に隠れた背景は画像に写っておらず、推定で補っているためです（「<a href="#appendix">付録：仕組み</a>」の「<a href="#method">方式と、カメラを追加する方式との違い</a>」を参照）。</li>
-<li>対処：このような写真では、純正のボケのほうが自然な場合があります。その場合は、エクスプレッションメニューの「ON」をもう一度押して本品を止め、純正カメラのフォーカスを元に戻してください。</li>
+<li><strong>すぐ手前の物を大きくぼかす写真は苦手です。</strong><ul>
+<li>起きること：明るい背景に細い物（窓枠など）が重なる所で、ボケの縁が浮いて見えたり、後ろの物が途中で切れたり、手前の物の形が透けて見えたりします。</li>
+<li>理由：手前の物に隠れた背景は写真に写っていないので、周りから推し量って埋めているためです。</li>
+<li>対処：こういう写真では、純正のボケのほうが自然なこともあります。その場合は、エクスプレッションメニューの「ON」をもう一度押して NocturneClip を止め、純正カメラのフォーカスを元に戻してください。</li>
 </ul>
 </li>
-<li>半透明の物や一部のシェーダーを用いた物は、ボケ方が不自然になる場合があります（純正のボケでも同様です）。</li>
-<li>アニメ調のアバターの輪郭線は、手前でボケても細い線が残る場合があります。</li>
-<li>写真の解像度を 720p にすると、F値などの表示が写真に写ります。</li>
-<li>ワールドの後処理（色の調整、光のにじみ等）は、本品の描画の後にかかります。そのため、後処理の強いワールドでは、画面表示の色が変わったり、文字がぶれて読みにくくなったりする場合があります。</li>
-<li>動画（ストリームカメラ等）向けには作られていません。</li>
-<li>VR での動作は確認していません。デスクトップモードでの使用を推奨します。</li>
-<li>VRC+ のカメラドローンは対象外です。動作は確認していません。</li>
+<li>半透明の物（髪の毛先やエフェクトなど）は、ボケ方が不自然になることがあります。半透明の素材（レンダーキュー 2501 以上）は距離の情報を持たないため、その後ろにある物の距離でぼかされてしまうためです。純正のボケでも同じことが起きます。</li>
+<li>アニメ調のアバターの輪郭線は、手前でボケても細い線が残ることがあります。</li>
+<li>ワールドの後処理（色の調整や光のにじみなど）は、NocturneClip の後にかかります。そのため、後処理の強いワールドでは、画面表示の色が変わったり、文字がぶれて読みにくくなったりすることがあります。</li>
+<li>動画（ストリームカメラなど）向けの作りにはなっていません。</li>
+<li>VR では動作を確認していません。デスクトップモードで使ってください。</li>
+<li>VRC+ のカメラドローンは対象外です。動作も確認していません。</li>
+<li>アンカーが「デフォルト」以外のときに純正カメラの「反転」を使うと、NocturneClip の画面表示が左右逆になります。写真とボケには影響しません。</li>
 </ul>
 <h1 id="results">動作確認の結果</h1>
-<p>作者が次の環境で試した結果です。参考にしてください。</p>
+<p>作者が試した結果です。参考にしてください。</p>
 <h2 id="tested">撮影できることを確認した環境</h2>
-<ul>
-<li>GeForce RTX 5070 Ti</li>
-<li>RTX A4000 Laptop</li>
-<li>Radeon RX 7600</li>
-<li>Radeon 780M（CPU 内蔵の GPU）</li>
-</ul>
-<p>Radeon RX 7600 では、4K・8K での撮影も確認しています。
-Radeon RX 7600 と Radeon 780M は撮影できることのみを確認しており、負荷（fps）は計測していません。</p>
-<h2 id="load">負荷</h2>
-<p>本品は、純正カメラを開いている間にボケの処理を行います。負荷はボケの量によって大きく変わり、大きくボケる構図では、カメラを開いている間の負荷が大きくなります。
-次の表は、PresentMon（Intel が公開している計測ツール）で計測した、本品による 1 フレームあたりの GPU の処理時間の増加です（ms は 1000 分の 1 秒。ほぼ何も置いていないテスト用のワールド、VRChat のグラフィック設定は最高画質）。</p>
 <div class="tbl"><table>
 <thead>
 <tr>
-<th>環境</th>
-<th>カメラを閉じた状態</th>
-<th>カメラを開いた状態（ボケが少ない構図）</th>
-<th>カメラを開いた状態（大きくボケる構図）</th>
+<th>GPU</th>
+<th>CPU</th>
+<th>メモリ</th>
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="環境">GeForce RTX 5070 Ti</td><td data-label="カメラを閉じた状態">約 0.3 ms</td><td data-label="カメラを開いた状態（ボケが少ない構図）">約 0.5 ms</td><td data-label="カメラを開いた状態（大きくボケる構図）">約 4 ms</td></tr>
-<tr><td data-label="環境">RTX A4000 Laptop（ノート用 RTX 3070 相当）</td><td data-label="カメラを閉じた状態">約 0.5〜0.8 ms</td><td data-label="カメラを開いた状態（ボケが少ない構図）">約 1 ms</td><td data-label="カメラを開いた状態（大きくボケる構図）">約 11 ms</td></tr>
+<tr><td data-label="GPU">GeForce RTX 5070 Ti</td><td data-label="CPU">Ryzen 7 5800X</td><td data-label="メモリ">64 GB</td></tr>
+<tr><td data-label="GPU">RTX A4000 Laptop（ThinkPad P15 Gen 2）</td><td data-label="CPU">Core i7-11800H</td><td data-label="メモリ">32 GB</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
-<p>例として、RTX A4000 Laptop で大きくボケる構図を写している間は、約 200 fps が約 70 fps になりました。負荷は、ワールド、画面の解像度、ボケの量によって変わるため、目安として見てください。
-カメラを閉じていても、本品を ON にしている間はわずかに負荷がかかるため、使用しないときは、エクスプレッションメニューの「ON」をもう一度押して、本品を止めてください。</p>
+<p>※ 撮影できるかの確認のみで、fps の計測はしていません。</p>
 <h1 id="faq">よくある質問</h1>
-<h3 id="h-6f2fd7">他のプレイヤーに見えますか。</h3>
-<p>本品の描画は見えません。ただし、操作に用いる左手の形と、それに連動する表情などは見えます。</p>
+<h3 id="h-46260e">ほかのプレイヤーに見えますか。</h3>
+<p>NocturneClip が描くものは見えません。ただし、操作に使う左手の形は見えます。くわしくは「<a href="#others">他のプレイヤーへの影響</a>」を参照してください。</p>
 <h3 id="h-120ce3">重いですか。</h3>
-<p>大きくボケる構図では、カメラを開いている間の負荷が大きくなります。詳しくは「<a href="#results">動作確認の結果</a>」を参照してください。</p>
+<p>カメラを開いた状態で大きくボケる構図を写していると、重くなります。重いと感じたときは、F値を大きくしてボケを小さくしてください。</p>
 <h3 id="h-5fb1bf">VR で使えますか。</h3>
-<p>VR での動作は確認していません。デスクトップモードでの使用を推奨します。</p>
-<h3 id="h-675daa">純正カメラの「飛行モード」とカメラドローンは違いますか。</h3>
-<p>違います。飛行モードは、純正カメラを手から離して動かす機能で、本品で使用できます。カメラドローンは VRC+ の別機能で、本品の対象外です。</p>
-<h3 id="h-1f45d2">純正カメラのフォーカスと併用できますか。</h3>
-<p>併用するとボケが二重にかかるため、純正カメラのフォーカス（絞りのアイコン）は「なし」にしてください。</p>
-<h3 id="h-5023d3">写真に F値などの表示が写りますか。</h3>
-<p>写真の解像度が 1080p 以上であれば写りません。720p では写ります。</p>
-<h3 id="h-205163">ピント固定で、動く人を追いかけられますか。</h3>
-<p>追いかけられません。固定は、記録した向きの線上に見える物に合わせる機能です。被写体が動いた場合は、固定し直してください。</p>
+<p>VR では動作を確認していません。デスクトップモードで使ってください。</p>
+<h3 id="h-4d9bb4">純正カメラの「飛行モード」とカメラドローンは違うものですか。</h3>
+<p>違うものです。飛行モードは、純正カメラを手から離して動かす機能で、NocturneClip と一緒に使えます。カメラドローンは VRC+ の別の機能で、NocturneClip の対象外です。</p>
+<h3 id="h-07e913">純正カメラのフォーカスと一緒に使えますか。</h3>
+<p>一緒に使うとボケが二重にかかるので、純正カメラのフォーカス（絞りのアイコン）は「なし」にしてください。</p>
+<h3 id="h-95594e">ピントを固定して、動く人を追いかけられますか。</h3>
+<p>追いかけられません。固定は、覚えた向きの線の上に見える物にピントを合わせる機能です。被写体が動いたら、固定し直してください。</p>
 <h3 id="h-9b3590">プレビューと写真で、ボケの大きさは同じですか。</h3>
-<p>写真全体に対するボケの大きさは、解像度にかかわらず同じになるように計算しています。</p>
+<p>同じです。写真の解像度が変わっても、写真全体に対するボケの大きさが同じになるように計算しています。</p>
 <h1 id="update-remove">更新と削除</h1>
 <h2 id="update">更新ガイド</h2>
-<p>旧版を残したまま新しい版をインポートすると、エラーが発生する場合があります。次の手順で入れ替えてください。</p>
+<p>古い版を残したまま新しい版をインポートすると、エラーが出ることがあります。次の手順で入れ替えてください。</p>
 <blockquote>
-<p><strong>注意</strong>：「NocturneClip」フォルダを削除すると、本品を導入したすべてのアバターの設定（F値など）が消えます。F値を変更していた場合は、削除の前に控えてください。</p>
+<p><strong>注意</strong>：「NocturneClip」フォルダを消すと、NocturneClip を入れたすべてのアバターの設定（F値など）も消えます。F値を変えていた場合は、消す前に控えておいてください。</p>
 </blockquote>
 <ol>
-<li>本品を導入したすべてのアバター（別のシーンにあるものを含む）から、「NocturneClip」オブジェクトを削除します。</li>
-<li>プロジェクト内の「NocturneClip」フォルダを削除します。</li>
+<li>NocturneClip を入れたすべてのアバター（ほかのシーンにあるものも含めて）から、「NocturneClip」オブジェクトを消します。</li>
+<li>プロジェクトの「NocturneClip」フォルダを消します。</li>
 <li>新しい版のパッケージをインポートします。</li>
-<li>本品を使うアバターごとに、セットアップ画面で「このアバターに入れる」を押します。</li>
+<li>NocturneClip を使うアバターごとに、セットアップ画面で「このアバターに入れる」を押します。</li>
 <li>それぞれのアバターをアップロードします。</li>
 </ol>
-<p>導入時に作成したデータも「NocturneClip」フォルダ内にあるため、一部のアバターだけを入れ直すと、残りのアバターは正しく動作しません。
-手順 1 を行わなかったアバターでも、導入時に破損した旧版の「NocturneClip」が見つかったときは、削除するかどうかの確認が表示されます。</p>
+<p>アバターに入れたときに作られたデータも「NocturneClip」フォルダの中にあります。そのため、一部のアバターだけ入れ直すと、残りのアバターは正しく動きません。</p>
+<p>手順 1 を忘れたアバターでも、入れるときに古い「NocturneClip」の壊れた残りが見つかれば、消すかどうかを聞く画面が出ます。</p>
 <h2 id="remove">削除</h2>
 <ol>
-<li>アバターの中の「NocturneClip」オブジェクトを削除します。</li>
+<li>アバターの中の「NocturneClip」オブジェクトを消します。</li>
 <li>アバターをアップロードします。</li>
 </ol>
-<p>本品を導入したアバターが他に無い場合は、プロジェクト内の「NocturneClip」フォルダも削除できます。</p>
+<p>ほかに NocturneClip を入れたアバターがなければ、プロジェクトの「NocturneClip」フォルダも消してかまいません。</p>
 <h1 id="troubleshooting">トラブルシューティング</h1>
 <div class="tbl"><table>
 <thead>
 <tr>
-<th>現象</th>
-<th>対処</th>
+<th>起きたこと</th>
+<th>直し方</th>
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="現象">「Modular Avatar が入っていません」と表示される</td><td data-label="対処">VCC または ALCOM で Modular Avatar を導入してください</td></tr>
-<tr><td data-label="現象">「Modular Avatar が古い版のため、NocturneClip のセットアップを使えません」と表示される</td><td data-label="対処">Modular Avatar を 1.18.1 以上に更新してください</td></tr>
-<tr><td data-label="現象">「書き出し先が Android（iOS）になっています」と表示される</td><td data-label="対処">書き出し先を Windows に切り替えてアップロードしてください</td></tr>
-<tr><td data-label="現象">「シーンが保存されていないため、入れられませんでした」と表示される</td><td data-label="対処">シーンを保存し、再度実行してください</td></tr>
-<tr><td data-label="現象">インポート後にエラーが表示される</td><td data-label="対処">「更新ガイド」に従って入れ直してください</td></tr>
-<tr><td data-label="現象">更新後、一部のアバターで動かない</td><td data-label="対処">本品を導入したすべてのアバターで「このアバターに入れる」を押し、アップロードし直してください</td></tr>
-<tr><td data-label="現象">ボケない</td><td data-label="対処">エクスプレッションメニューで「ON」になっているか確認してください。アバターを読み込み直すと OFF に戻ります</td></tr>
-<tr><td data-label="現象">ボケが二重にかかる</td><td data-label="対処">純正カメラのフォーカス（絞りのアイコン）を「なし」にしてください</td></tr>
-<tr><td data-label="現象">本品が写らない</td><td data-label="対処">純正カメラで自分のアバターを写さない設定になっていないかを確認してください</td></tr>
-<tr><td data-label="現象">写真に F値などの表示が写った</td><td data-label="対処">写真の解像度を 1080p 以上にしてください</td></tr>
-<tr><td data-label="現象">画面表示の色がおかしい、文字がぶれる</td><td data-label="対処">ワールドの後処理による場合があります。別のワールドで正常に表示されるか確認してください</td></tr>
-<tr><td data-label="現象">純正カメラでピントを操作しても変わらない</td><td data-label="対処">仕様です。ピントは本品の自動ピントと、左Shift＋F8 の固定で決まります</td></tr>
-<tr><td data-label="現象">左Shift＋F8 を押しても固定されない</td><td data-label="対処">すでに固定中です。左Shift＋F7 で解除してから、再度左Shift＋F8 を押してください</td></tr>
-<tr><td data-label="現象">ピント固定中に、ピントが背景や別の物に移った</td><td data-label="対処">固定は記録した向きの線上の物に合わせます。被写体が動いた場合は、固定し直してください</td></tr>
-<tr><td data-label="現象">F値を変えると表情が変わる</td><td data-label="対処">仕様です。左手の形に連動する表情があるアバターでは変わります</td></tr>
+<tr><td data-label="起きたこと">「Modular Avatar が入っていません」と出る</td><td data-label="直し方"><a href="https://vcc.docs.vrchat.com/">VCC</a> または <a href="https://vrc-get.anatawa12.com/alcom">ALCOM</a> で <a href="https://modular-avatar.nadena.dev/ja/docs/intro">Modular Avatar</a> を追加してください</td></tr>
+<tr><td data-label="起きたこと">「Modular Avatar が古い版のため、NocturneClip のセットアップを使えません」と出る</td><td data-label="直し方">Modular Avatar を 1.18.1 以上に更新してください</td></tr>
+<tr><td data-label="起きたこと">「書き出し先が Android（iOS）になっています」と出る</td><td data-label="直し方">書き出し先を Windows に切り替えてから、アップロードしてください</td></tr>
+<tr><td data-label="起きたこと">「シーンが保存されていないため、入れられませんでした」と出る</td><td data-label="直し方">シーンを保存してから、もう一度押してください</td></tr>
+<tr><td data-label="起きたこと">インポートしたらエラーが出た</td><td data-label="直し方">「更新ガイド」の手順で入れ直してください</td></tr>
+<tr><td data-label="起きたこと">更新したら、一部のアバターで動かない</td><td data-label="直し方">NocturneClip を入れたすべてのアバターで「このアバターに入れる」を押し、アップロードし直してください</td></tr>
+<tr><td data-label="起きたこと">ボケない</td><td data-label="直し方">エクスプレッションメニューで「ON」になっているか確かめてください。アバターを読み込み直すと止まった状態に戻ります</td></tr>
+<tr><td data-label="起きたこと">ボケが二重にかかる</td><td data-label="直し方">純正カメラのフォーカス（絞りのアイコン）を「なし」にしてください</td></tr>
+<tr><td data-label="起きたこと">NocturneClip が写らない</td><td data-label="直し方">純正カメラで、自分のアバターを写さない設定になっていないか確かめてください</td></tr>
+<tr><td data-label="起きたこと">写真に F値などの表示が写った</td><td data-label="直し方">写真の解像度を 1080p 以上にしてください</td></tr>
+<tr><td data-label="起きたこと">画面表示の色がおかしい、文字がぶれる</td><td data-label="直し方">ワールドの後処理のせいかもしれません。別のワールドでふつうに見えるか確かめてください</td></tr>
+<tr><td data-label="起きたこと">純正カメラでピントを操作しても、NocturneClip のボケが変わらない</td><td data-label="直し方">そういう作りです。NocturneClip のピントは、自動ピントと左Shift＋F8 の固定で決まります</td></tr>
+<tr><td data-label="起きたこと">左Shift＋F8 を押しても固定されない</td><td data-label="直し方">すでに固定されています。左Shift＋F7 で外してから、もう一度左Shift＋F8 を押してください</td></tr>
+<tr><td data-label="起きたこと">ピントを固定したのに、背景や別の物にピントが移った</td><td data-label="直し方">固定は、覚えた向きの線の上にある物に合わせます。被写体が動いたら、固定し直してください</td></tr>
+<tr><td data-label="起きたこと">F値を変えると表情が変わる</td><td data-label="直し方">そういう作りです。左手の形で表情が動くアバターでは変わります</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
-<h1 id="appendix">付録：仕組み</h1>
-<h2 id="method">方式と、カメラを追加する方式との違い</h2>
-<p>VRChat のカメラ用ギミックには、大きく分けて次の 2 つの方式があります。</p>
-<div class="tbl"><table>
-<thead>
-<tr>
-<th></th>
-<th>専用カメラを追加する方式</th>
-<th>本品（フィルター方式）</th>
-</tr>
-</thead>
-<tbody>
-<tr><td data-label="">ボケの元になる画像</td><td data-label="専用カメラを追加する方式">アバターに持たせた専用カメラで、ワールドを描き直した画像</td><td data-label="本品（フィルター方式）">純正カメラが描画した 1 枚の画像と、その奥行きの情報</td></tr>
-<tr><td data-label="">負荷</td><td data-label="専用カメラを追加する方式">ワールドを描き直す分だけ増えます</td><td data-label="本品（フィルター方式）">描き直しを行わないため、比較的軽量です</td></tr>
-<tr><td data-label="">操作</td><td data-label="専用カメラを追加する方式">ギミック独自のカメラを操作します</td><td data-label="本品（フィルター方式）">純正カメラを使用します（ピントは本品が決めます）</td></tr>
-<tr><td data-label="">手前のボケの正確さ</td><td data-label="専用カメラを追加する方式">方式によっては、手前の物の背後に隠れた景色も描けます</td><td data-label="本品（フィルター方式）">1 枚の画像に写っていない背後の景色は、推定で補います</td></tr>
-</tbody>
-</table></div><span class="scrollhint">← 表は横に動かせます</span>
-<p>本品は、軽さと純正カメラの手軽さを優先し、手前のボケの正確さにおいて一部を譲っています。この方式に由来する弱点は「制限事項」に記載しています。</p>
-<h2 id="h-4a3f28">処理の流れ</h2>
-<pre><code>純正カメラが描画した画像（色）と、奥行きの情報（深度）
-        ↓
-本品のシェーダーによる 5 段階の処理（利用者の PC で、純正カメラの描画中のみ）
-        ↓
-画面全体を覆う面で上書き → プレビューおよび保存写真に反映
-</code></pre>
-<ul>
-<li>純正カメラは写真用の描画の際、色の画像とともに、画面の各点がカメラから何 m 先にあるかという奥行きの情報（深度）を作成しています。本品はこれを読み取り、画素ごとの距離を求めます。</li>
-<li>アバター内に画面全体を覆う面を配置しており、純正カメラの描画中にのみ表示されます。通常の視点、鏡、ワールドの反射用カメラには描画しません。</li>
-<li>画面の色は、Unity の GrabPass（その時点の画面を取り込む機能）で取得します。途中の結果は画面内を作業領域として次の段階へ受け渡し、最終段階ですべて上書きするため、写真には残りません。</li>
-</ul>
-<h2 id="h-117d97">奥行きの情報の使い道</h2>
-<ul>
-<li><strong>ボケの大きさ</strong>：画素ごとの距離とピント距離の差から、ボケの大きさを決めます。</li>
-<li><strong>手前と奥の区別</strong>：ピントより手前の物と奥の物を分け、別々にぼかします。</li>
-<li><strong>自動ピント</strong>：画面中央の距離を測り、ピントを合わせます。</li>
-<li><strong>画面表示</strong>：ピント距離や距離目盛りを表示します。</li>
-</ul>
-<h2 id="h-6df139">ボケの大きさの計算</h2>
-<ul>
-<li>実際のレンズと同じ薄レンズの式により、画素ごとのボケの大きさ（錯乱円の大きさ）を計算します。</li>
-<li>焦点距離は、純正カメラのズーム（画角）から求めます。基準はフルサイズのセンサー（縦 24mm）です。</li>
-<li>「ボケの最大の大きさ」により、上限を画面の大きさに対する割合で定めています。</li>
-</ul>
-<h2 id="h-806b47">ピントの仕組み</h2>
-<ul>
-<li>自動：画面中央の距離を、周囲 5 点の中央値で測定して合わせます。細かな凹凸による揺れを抑えるためです。</li>
-<li>固定：左Shift＋F8 を押した時点の純正カメラの位置と向きを、小さな記録用の仕組みに保存します。その後は、保存した位置と向きから伸ばした線が、現在の画像のどこに見えているかを奥行きの情報から探し、そこまでの距離に合わせます。</li>
-</ul>
-<h2 id="h-57361e">ボケ生成の 5 段階</h2>
-<ol>
-<li><strong>縮小</strong>：画像を 1/2 に縮小し、色とボケの大きさを用意します。</li>
-<li><strong>追加の縮小と区画分け</strong>：1/4・1/8 の画像を作成します。あわせて画面を細かな区画（タイル）に分け、区画ごとに「最も手前でボケる物の大きさ」を記録します。手前の大きなボケが離れた位置まで届くかを、効率よく調べるためです。</li>
-<li><strong>ボケの収集</strong>：画素ごとに周囲の点を同心円状に読み取り、「その点のボケがこの画素まで届くか」を判定して集めます。奥のボケと手前のボケは別々に集めます。<ul>
-<li>奥のボケは、その画素自身のボケより大きく広がらないように制限します。くっきりした被写体の上に、背景のボケがにじまないようにするためです。</li>
-<li>手前のボケは、背後の物に覆いかぶさるように広げ、覆っている度合い（被覆率）もあわせて記録します。</li>
-<li>手前の物に隠れた背景は画像に写っていないため、周囲の見えている部分から推定して補います（「制限事項」の原因です）。</li>
-<li>明るい点はやや強く扱い、光の玉が明瞭に出るようにします。</li>
-</ul>
-</li>
-<li><strong>平滑化</strong>：3x3 の中央値フィルタにより、収集時に生じるざらつきや輪状の模様を除去します。</li>
-<li><strong>合成</strong>：元の解像度に戻して合成します。ピントの合っている部分は元の鮮明な画像、わずかにボケる部分は元の解像度のまま小さくぼかした画像、大きくボケる部分は 1/2 で生成したボケを用います。いずれを用いるかを元の解像度の深度で決めるため、被写体の輪郭は鮮明に保たれます。最後に手前のボケを被覆率に応じて重ね、周辺減光などの描写特性を加えます。</li>
-</ol>
-<h2 id="h-a727d1">写りの違い</h2>
-<p>各写りは同じ仕組みを用い、次の値を変えて作成しています。</p>
-<ul>
-<li>光の玉の縁の明るさ、中心の抜け具合（Bubble は縁が明るく中心が抜けます）</li>
-<li>玉の縁のやわらかさ</li>
-<li>画面端で玉が欠ける形（キャッツアイ）と、渦を巻くような流れ</li>
-<li>玉の縁のわずかな色ずれ</li>
-<li>周辺減光の強さ</li>
-</ul>
-<h2 id="h-45a923">画面表示の仕組み</h2>
-<ul>
-<li>プレビューと保存写真は、描画の大きさで判別しています（1280×720 以下をプレビューとして扱います）。このため、720p の写真には表示が写ります。</li>
-<li>表示は同じ全画面の面の中で描画しているため、追加の負荷はほとんどありません。</li>
-</ul>
-<h2 id="h-038759">他のプレイヤーに影響しない仕組み</h2>
-<ul>
-<li>GrabPass は、描画する面が画面に現れた時点で画面を取り込みます。シェーダー内で描画を取りやめても、取り込み自体は止まりません。そのため、面を含むオブジェクト自体を、利用者自身の画面でのみ有効にしています（IsLocal を条件とした切り替え）。</li>
-<li>初期状態は無効であり、パラメータもすべて同期しないため、他のプレイヤーの画面には面そのものが存在しません。</li>
-</ul>
 <h1 id="terms-credits">利用規約・権利表記・連絡先</h1>
 <h2 id="terms">利用規約</h2>
 <p><strong>第1条（著作権）</strong><br />
@@ -584,26 +440,26 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 <p>変更前に本品を入手した利用者の、変更前の規約で認められていた利用（変更前に撮影した写真・動画の利用を含みます）は、変更後も引き続き認めます。</p>
 <h2 id="credits">権利表記</h2>
 <ul>
-<li>Modular Avatar（作者 bd_）：MIT License。本品には含まれていません。別途導入してください。</li>
-<li>VRChat SDK：VRChat Inc. の利用規約に従います。本品には含まれていません。</li>
-<li>アイコンおよび数字の表示は、本品のために制作したものです。</li>
+<li><a href="https://modular-avatar.nadena.dev/ja/docs/intro">Modular Avatar</a>（作者 bd_）：MIT License。NocturneClip には含まれていないので、別に追加してください。</li>
+<li><a href="https://creators.vrchat.com/sdk/">VRChat SDK</a>：VRChat Inc. の利用規約に従います。NocturneClip には含まれていません。</li>
+<li>アイコンと数字の表示は、NocturneClip のために作ったものです。</li>
 </ul>
-<p>「VRChat」は VRChat Inc. の商標です。本品は VRChat Inc. とは関係のない個人の制作物です。</p>
+<p>「VRChat」は VRChat Inc. の商標です。NocturneClip は VRChat Inc. とは関係のない、個人の制作物です。</p>
 <h2 id="references">参考文献</h2>
-<p>ボケの生成方法は、次の公開資料の考え方を参考にしています。コードの転用は行っていません。</p>
+<p>ボケの作り方は、次の公開資料の考え方を参考にしました。</p>
 <ul>
-<li>Jorge Jimenez「Next Generation Post Processing in Call of Duty: Advanced Warfare」SIGGRAPH 2014 — タイルによる手前のボケの到達範囲の判定、手前と奥の分離収集、3x3 中央値フィルタ、画素ごとの回転に用いるノイズ（Interleaved Gradient Noise）
+<li>Jorge Jimenez「Next Generation Post Processing in Call of Duty: Advanced Warfare」SIGGRAPH 2014 — タイルで手前のボケが届く範囲を調べる方法、手前と奥を分けて集める方法、3x3 の真ん中の値を取るフィルタ、点ごとの回転に使うノイズ（Interleaved Gradient Noise）
   <a href="https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/">https://www.iryoku.com/next-generation-post-processing-in-call-of-duty-advanced-warfare/</a></li>
-<li>Tiago Sousa「CryEngine 3 Graphics Gems」SIGGRAPH 2013 — 収集方式のボケと仕上げの中央値フィルタ</li>
+<li>Tiago Sousa「CryEngine 3 Graphics Gems」SIGGRAPH 2013 — 周りから集める方式のボケと、仕上げの真ん中の値を取るフィルタ</li>
 <li>Guillaume Abadie「A Life of a Bokeh」SIGGRAPH 2018（Unreal Engine の被写界深度）— 手前と奥を別の層として扱う考え方
   <a href="https://dev.epicgames.com/documentation/unreal-engine/cinematic-depth-of-field-in-unreal-engine">https://dev.epicgames.com/documentation/unreal-engine/cinematic-depth-of-field-in-unreal-engine</a></li>
-<li>AMD FidelityFX Depth of Field — 手前の物の背後を周囲から補う考え方
+<li>AMD FidelityFX Depth of Field — 手前の物の後ろを周りから埋める考え方
   <a href="https://gpuopen.com/manuals/fidelityfx_sdk/techniques/depth-of-field/">https://gpuopen.com/manuals/fidelityfx_sdk/techniques/depth-of-field/</a></li>
 <li>Catlike Coding「Depth of Field」— 奥のボケを手前ににじませない考え方
   <a href="https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/">https://catlikecoding.com/unity/tutorials/advanced-rendering/depth-of-field/</a></li>
 <li>薄レンズの式（ボケの大きさの計算）</li>
 </ul>
-<p>VRChat および Unity の仕様は、次の公式資料で確認しています。</p>
+<p>VRChat と Unity の仕様は、次の公式資料で確かめました。</p>
 <ul>
 <li>VRChat Shader Globals：<a href="https://creators.vrchat.com/worlds/vrc-graphics/vrchat-shader-globals">https://creators.vrchat.com/worlds/vrc-graphics/vrchat-shader-globals</a></li>
 <li>VRChat Animator Parameters：<a href="https://creators.vrchat.com/avatars/animator-parameters/">https://creators.vrchat.com/avatars/animator-parameters/</a></li>
@@ -613,11 +469,12 @@ Radeon RX 7600 と Radeon 780M は撮影できることのみを確認してお�
 <h2 id="contact">連絡先</h2>
 <ul>
 <li>作者：Saku23</li>
-<li>X：@Saku23_vrc（DM）</li>
+<li>X：<a href="https://x.com/Saku23_vrc">@Saku23_vrc</a>（DM）</li>
+<li>BOOTH：<a href="https://sart-works.booth.pm/">https://sart-works.booth.pm/</a></li>
 </ul>
 <h1 id="history">更新履歴</h1>
 <ul>
-<li><strong>Version 1.0　2026-10-27</strong>
+<li><strong>Version 1.0　2026-10-28</strong><br />
   初版</li>
 </ul></main></div>
 <a id="totop" href="#top" aria-label="ページの先頭へ">上へ</a>
