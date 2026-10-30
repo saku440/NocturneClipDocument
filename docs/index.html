@@ -60,7 +60,7 @@ blockquote p{margin:4px 0}
 }
 </style></head>
 <body>
-<header><h1>NocturneClip 説明書</h1><span class="ver">Version 1.1　2026-10-29</span><a class="pdf" href="NocturneClip_manual.pdf">PDF</a></header>
+<header><h1>NocturneClip 説明書</h1><span class="ver">Version 1.2　2026-10-31</span><a class="pdf" href="NocturneClip_manual.pdf">PDF</a></header>
 <div class="wrap" id="top"><nav><div class="toc">
 <ul>
 <li><a href="#intro">はじめに</a><ul>
@@ -107,7 +107,7 @@ blockquote p{margin:4px 0}
 </li>
 </ul>
 </div>
-</nav><main><p class="mver">Version 1.1　2026-10-29</p><details class="mtoc"><summary>目次</summary><div class="toc">
+</nav><main><p class="mver">Version 1.2　2026-10-31</p><details class="mtoc"><summary>目次</summary><div class="toc">
 <ul>
 <li><a href="#intro">はじめに</a><ul>
 <li><a href="#about">NocturneClip について</a></li>
@@ -325,6 +325,7 @@ blockquote p{margin:4px 0}
 <tbody>
 <tr><td data-label="項目">ボケの最大の大きさ</td><td data-label="内容">ボケの大きさの上限です（画面の大きさに対する割合）</td></tr>
 <tr><td data-label="項目">mm数基準</td><td data-label="内容">画面に出す焦点距離（mm）を、どの基準で計算するかです<br>フルサイズ 16:9／フルサイズ 3:2 から選びます<br>変わるのは表示の数字だけで、ボケの大きさは変わりません</td></tr>
+<tr><td data-label="項目">プレビューの画質</td><td data-label="内容">高（初期値）／中／低。カメラを開いている間に重いと感じたら、下げてください。下げるほど軽くなりますが、プレビューのボケが粗くなります。撮った写真には影響しません</td></tr>
 <tr><td data-label="項目">初期値に戻す</td><td data-label="内容">F値も含め、この画面の設定をすべて初期値に戻します</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
@@ -354,7 +355,7 @@ blockquote p{margin:4px 0}
 <li>NocturneClip が描くのは、自分の画面だけです。ほかのプレイヤーの画面には何も出ませんし、ほかのプレイヤーが撮る写真にも影響しません。</li>
 <li>パラメータはどれも同期しません。</li>
 <li><strong>左手の形はほかのプレイヤーにも見えます。</strong> F値の切り替えやピントの固定には VRChat の左手のジェスチャーを使うので、手の形や、それに合わせて動く表情などは、いつもどおりほかの人にも見えます。</li>
-<li><strong>アバターのパフォーマンスランクが Very Poor になります。</strong> 純正カメラをどこに向けてもボケを描けるように、大きな範囲（Bounds）を設定しているためです。範囲が理由の Very Poor では、アバターが隠されることはありません（VRChat の公式資料による。「<a href="#references">参考文献</a>」を参照）。</li>
+<li>画面全体に描くために Line Renderer を1つ使います。Line Renderer はパフォーマンスランクの範囲（Bounds）に数えられないので、範囲が理由で Very Poor になることはありません（VRChat の公式資料による。「<a href="#references">参考文献</a>」を参照）。ただし、NocturneClip を入れるとメッシュ・マテリアルスロット・Line Renderer の数が少し増えるので、アバターがそれらの上限に近い場合は、ランクが下がることがあります。</li>
 </ul>
 <h2 id="limits">制限事項</h2>
 <h3 id="limits-image">写りについて</h3>
@@ -390,15 +391,15 @@ blockquote p{margin:4px 0}
 <tr><td data-label="GPU">RTX A4000 Laptop（ThinkPad P15 Gen 2）</td><td data-label="CPU">Core i7-11800H</td><td data-label="メモリ">32 GB</td></tr>
 </tbody>
 </table></div><span class="scrollhint">← 表は横に動かせます</span>
-<p>※ 撮影できるかの確認のみで、fps の計測はしていません。</p>
 <h1 id="help">困ったとき</h1>
 <h2 id="faq">よくある質問</h2>
 <h3 id="h-46260e">ほかのプレイヤーに見えますか。</h3>
 <p>NocturneClip が描くものは見えません。ただし、操作に使う左手の形は見えます。くわしくは「<a href="#others">他のプレイヤーへの影響</a>」を参照してください。</p>
 <h3 id="h-c8ba84">アバターのランクが Very Poor になりました。</h3>
-<p>NocturneClip を入れると Very Poor になります。くわしくは「<a href="#others">他のプレイヤーへの影響</a>」を参照してください。</p>
+<p>Version 1.1 までは、NocturneClip の範囲（Bounds）が大きいため、入れると Very Poor になっていました。Version 1.2 で範囲を使わない作りに変え、この理由では Very Poor にならなくなりました。1.1 以前から更新した場合は、「このアバターに入れる」を押し直してから、アップロードし直してください。
+NocturneClip を入れると、メッシュが1つ、マテリアルスロットが2つ、Line Renderer が1つ増えます。アバターがこれらの上限に近い場合は、ランクが下がることがあります。VRChat のアバター情報で確かめてください。</p>
 <h3 id="h-120ce3">重いですか。</h3>
-<p>カメラを開いた状態で大きくボケる構図を写していると、重くなります。重いと感じたときは、F値を大きくしてボケを小さくしてください。</p>
+<p>カメラを開いた状態で大きくボケる構図を写していると、重くなります。重いと感じたときは、セットアップ画面の「詳しい設定」で「プレビューの画質」を下げるか、F値を大きくしてボケを小さくしてください。</p>
 <h3 id="h-5fb1bf">VR で使えますか。</h3>
 <p>VR では動作を確認していません。デスクトップモードで使ってください。</p>
 <h3 id="h-4d9bb4">純正カメラの「飛行モード」とカメラドローンは違うものですか。</h3>
@@ -418,15 +419,17 @@ blockquote p{margin:4px 0}
 </tr>
 </thead>
 <tbody>
-<tr><td data-label="起きたこと">「Modular Avatar が入っていません」と出る</td><td data-label="直し方"><a href="https://vcc.docs.vrchat.com/">VCC</a> または <a href="https://vrc-get.anatawa12.com/alcom">ALCOM</a> で <a href="https://modular-avatar.nadena.dev/ja/docs/intro">Modular Avatar</a> を追加してください</td></tr>
-<tr><td data-label="起きたこと">「Modular Avatar が古いバージョンのため、NocturneClip のセットアップを使えません」と出る</td><td data-label="直し方">Modular Avatar を 1.18.1 以上に更新してください</td></tr>
-<tr><td data-label="起きたこと">「書き出し先が Android（iOS）になっています」と出る</td><td data-label="直し方">書き出し先を Windows に切り替えてから、アップロードしてください</td></tr>
-<tr><td data-label="起きたこと">「シーンが保存されていないため、入れられませんでした」と出る</td><td data-label="直し方">シーンを保存してから、もう一度押してください</td></tr>
+<tr><td data-label="起きたこと">「Modular Avatar が見つかりません」と出る</td><td data-label="直し方"><a href="https://vcc.docs.vrchat.com/">VCC</a> または <a href="https://vrc-get.anatawa12.com/alcom">ALCOM</a> で <a href="https://modular-avatar.nadena.dev/ja/docs/intro">Modular Avatar</a> を追加してください</td></tr>
+<tr><td data-label="起きたこと">「Modular Avatar のバージョンが古いため…」と出る</td><td data-label="直し方">Unity のプロジェクトを閉じてから、VCC または ALCOM で Modular Avatar を 1.18.1 以上に更新し、プロジェクトを開き直してください</td></tr>
+<tr><td data-label="起きたこと">「書き出し先が Android（iOS）です」と出る</td><td data-label="直し方">書き出し先を Windows に切り替えてから、アップロードしてください</td></tr>
+<tr><td data-label="起きたこと">「入れられませんでした。原因：シーンが保存されていません。」と出る</td><td data-label="直し方">シーンを保存してから、もう一度押してください</td></tr>
+<tr><td data-label="起きたこと">入れたときに「軽量化（カメラを閉じている間）：無効」と出る</td><td data-label="直し方">ボケは使えます。カメラを閉じている間の軽量化だけが効いていません<br>原因が「Humanoid の Head ボーンがありません」なら、アバターの Rig を Humanoid にして Head を割り当て、入れ直してください<br>原因が「VRC Head Chop が上限の 16 個に達しています」なら、VRC Head Chop を 15 個以下にして、入れ直してください</td></tr>
 <tr><td data-label="起きたこと">インポートしたらエラーが出た</td><td data-label="直し方">「更新ガイド」の手順で入れ直してください</td></tr>
 <tr><td data-label="起きたこと">更新したら、一部のアバターで動かない</td><td data-label="直し方">NocturneClip を入れたすべてのアバターで「このアバターに入れる」を押し、アップロードし直してください</td></tr>
 <tr><td data-label="起きたこと">ボケない</td><td data-label="直し方">エクスプレッションメニューで「ON」になっているか確かめてください<br>アバターを読み込み直すと止まった状態に戻ります</td></tr>
 <tr><td data-label="起きたこと">ボケが二重にかかる</td><td data-label="直し方">純正カメラのフォーカス（絞りのアイコン）を「なし」にしてください</td></tr>
 <tr><td data-label="起きたこと">NocturneClip が写らない</td><td data-label="直し方">純正カメラで、自分のアバターを写さない設定になっていないか確かめてください</td></tr>
+<tr><td data-label="起きたこと">プレビューのボケが粗い</td><td data-label="直し方">セットアップ画面の「プレビューの画質」が「中」か「低」になっていないか確かめてください<br>撮った写真には影響しません</td></tr>
 <tr><td data-label="起きたこと">写真に F値などの表示が写った</td><td data-label="直し方">写真の解像度を 1080p 以上にしてください</td></tr>
 <tr><td data-label="起きたこと">画面表示の色がおかしい、文字がぶれる</td><td data-label="直し方">ワールドの後処理のせいかもしれません<br>別のワールドでふつうに見えるか確かめてください</td></tr>
 <tr><td data-label="起きたこと">純正カメラでピントを操作しても、NocturneClip のボケが変わらない</td><td data-label="直し方">そういう作りです<br>NocturneClip のピントは、自動ピントと左Shift＋F8 の固定で決まります</td></tr>
@@ -512,6 +515,12 @@ blockquote p{margin:4px 0}
 <p><strong>2026-10-29　Version 1.1</strong></p>
 <ul>
 <li>写り「Nocturne」を追加</li>
+</ul>
+<p><strong>2026-10-31　Version 1.2</strong></p>
+<ul>
+<li>カメラを閉じている間の負荷を軽くしました</li>
+<li>セットアップに「プレビューの画質」を追加</li>
+<li>範囲（Bounds）が原因で、パフォーマンスランクが Very Poor になる問題を修正</li>
 </ul></main></div>
 <a id="totop" href="#top" aria-label="ページの先頭へ">上へ</a>
 </body></html>
